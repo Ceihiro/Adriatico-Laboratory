@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-public class Vehicle{
-    Scanner input = new Scanner(System.in);
-    
+class Vehicle {
     // Private Attributes
     private String brand;
     private int speed;
@@ -29,8 +27,7 @@ public class Vehicle{
     }
 
     // Display Method
-    public String displayInfo(){
-        System.out.println("Vehicle Details");
+    public void displayInfo(){
         System.out.println("Brand    : " + brand);
         System.out.println("Speed    : " + speed);
         System.out.println("FuelType : " + fuelType);
@@ -39,7 +36,7 @@ public class Vehicle{
 }
 
 // Car Subclass
-public class Car extends Vehicle{
+class Car extends Vehicle{
     // extra attribute
     private int numDoors;
 
@@ -57,12 +54,12 @@ public class Car extends Vehicle{
 }
 
 // Motorcycle Subclass
-public class Motorcycle extends Vehicle{
+class Motorcycle extends Vehicle{
     // extra attribute
     private boolean hasSidecar;
 
     // Constructor
-    public Car(String brand, int speed, String fuelType, int numDoors) {
+    public Motorcycle(String brand, int speed, String fuelType, boolean hasSideCar) {
         super(brand, speed, fuelType);
         this.hasSidecar = hasSideCar;
     }
@@ -79,3 +76,41 @@ public class Motorcycle extends Vehicle{
     }
 }
 
+public class TestVehicle {
+     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Car Details");
+        System.out.print("Brand     : ");
+        String carBrand = input.nextLine();
+        System.out.print("Speed     : ");
+        int carSpeed = input.nextInt();
+        input.nextLine();
+        System.out.print("Fuel Type : ");
+        String carFuelType = input.nextLine();
+        System.out.print("NumDoors  : ");
+        int carNumDoors = input.nextInt();
+        input.nextLine();
+        System.out.println();
+
+        Car car = new Car(carBrand, carSpeed, carFuelType, carNumDoors);
+        car.displayInfo();
+
+        System.out.println();
+        System.out.println("Motorcycle Details");
+        System.out.print("Brand       : ");
+        String motorBrand = input.nextLine();
+        System.out.print("Speed       : ");
+        int motorSpeed = input.nextInt();
+        input.nextLine();
+        System.out.print("Fuel Type   : ");
+        String motorFuelType = input.nextLine();
+        System.out.print("HasSidecar [True or False] : ");
+        boolean motorHasSidecar = input.nextBoolean();
+
+        Motorcycle motor = new Motorcycle(motorBrand, motorSpeed, motorFuelType, motorHasSidecar);
+        motor.displayInfo();
+
+        input.close();
+     }
+}
