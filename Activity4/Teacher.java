@@ -11,6 +11,6 @@ class Teacher extends Person {
     @Override
     public void displayInfo() {
         super.displayInfo();
-        System.out.println("Subject     : " + subject);.
+        System.out.println("Subject     : " + subject);
     }
 }
