@@ -30,3 +30,21 @@ public class Vehicle{
     }
 
 }
+
+// Car Subclass
+public class Car extends Vehicle{
+    // extra attribute
+    private int numDoors;
+
+    // Constructor
+    public Car(String brand, int speed, String fuelType, int numDoors) {
+        super(brand, speed, fuelType);
+        this.numDoors = newDoors;
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("");
+    }
+}
