@@ -1,4 +1,8 @@
+import java.util.Scanner;
+
 public class Vehicle{
+    Scanner input = new Scanner(System.in);
+    
     // Private Attributes
     private String brand;
     private int speed;
@@ -26,7 +30,10 @@ public class Vehicle{
 
     // Display Method
     public String displayInfo(){
-        System.out.println("");
+        System.out.println("Vehicle Details");
+        System.out.println("Brand    : " + brand);
+        System.out.println("Speed    : " + speed);
+        System.out.println("FuelType : " + fuelType);
     }
 
 }
@@ -39,13 +46,13 @@ public class Car extends Vehicle{
     // Constructor
     public Car(String brand, int speed, String fuelType, int numDoors) {
         super(brand, speed, fuelType);
-        this.numDoors = newDoors;
+        this.numDoors = numDoors;
     }
 
     @Override
     public void displayInfo() {
         super.displayInfo();
-        System.out.println("");
+        System.out.println("NumDoor  : " + numDoors);
     }
 }
 
@@ -63,6 +70,12 @@ public class Motorcycle extends Vehicle{
     @Override
     public void displayInfo() {
         super.displayInfo();
-        System.out.println("");
+        if (hasSidecar) {
+            System.out.println("Has Sidecar : Yes");
+        } 
+        else { 
+            System.out.println("Has Sidecar : No");
+        }
     }
 }
+
