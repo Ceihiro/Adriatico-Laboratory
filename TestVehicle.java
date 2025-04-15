@@ -48,3 +48,21 @@ public class Car extends Vehicle{
         System.out.println("");
     }
 }
+
+// Motorcycle Subclass
+public class Motorcycle extends Vehicle{
+    // extra attribute
+    private boolean hasSidecar;
+
+    // Constructor
+    public Car(String brand, int speed, String fuelType, int numDoors) {
+        super(brand, speed, fuelType);
+        this.hasSidecar = hasSideCar;
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("");
+    }
+}
